@@ -4,13 +4,33 @@
     box-sizing: border-box;
 }
 
+:root {
+    --text-color: white;
+    --bg-url: url(./assets/bg-mobile.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+    --text-color: black;
+    --bg-url: url(./assets/bg-mobile-light.jpg);
+    --stroke-color: rgba(0, 0, 0, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(./assets/sun.svg);
+}
+
 body {
-    background: url(./assets/bg-mobile.jpg) no-repeat top center/cover;
+    background: var(--bg-url) no-repeat top center/cover;
 
 }
  body * {
     font-family: 'Inter', sans-serif;
-    color: #fff;
+    color: var(--text-color);
 }
 
 #container {
@@ -36,6 +56,20 @@ body {
     line-height: 24px;
 }
 
+#switch button {
+    width: 32px;
+    height: 32px;
+    background: white var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+
+}
+
+#switch span {
+    width: 64px;
+    height: 24px;
+}
+
 ul{
     list-style: none;
 
@@ -53,8 +87,8 @@ ul li {
 
     padding: 16px 24px;
 
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    background: var(--surface-color);
+    border: 1px solid var(--stroke-color);
     border-radius: 8px;
 
     backdrop-filter: blur(4px);
@@ -70,8 +104,8 @@ ul li {
 
 /* hover apenas dentro da lista */
 ul li:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1.5px solid white;
+    background: var(--surface-color-hover);
+    border: 1.5px solid var(--text-color);
 }
 
 /* corrigido o a com texto sublinhado */
@@ -82,10 +116,29 @@ a {
 #social-links {
     display: flex;
     justify-content: center;
-    gap: 32px;
 
     padding: 24px 0;
 
     font-size: 24px;
 }
 
+#social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#social-links a:hover {
+    background: var(--highlight-color);
+    
+}
+
+footer {
+    padding: 24px o;
+    text-align: center;
+    font-size: 14px;
+}
