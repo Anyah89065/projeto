@@ -60,15 +60,23 @@ ul li {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 
-    text-decoration: none;
+    /* esse text-decoration ai
+    não precisa mais */
+    /* text-decoration: none; */
     font-weight: 500;
 
     transition: background 0.2s;
 } 
 
-ul li a:hover {
+/* hover apenas dentro da lista */
+ul li:hover {
     background: rgba(255, 255, 255, 0.05);
     border: 1.5px solid white;
+}
+
+/* corrigido o a com texto sublinhado */
+a {
+    text-decoration: none;
 }
 
 #social-links {
